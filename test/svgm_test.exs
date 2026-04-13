@@ -1,8 +1,4 @@
-defmodule SvgmTest do
+defmodule SVGMTest do
   use ExUnit.Case
-  doctest Svgm
-
-  test "greets the world" do
-    assert Svgm.hello() == :world
-  end
+  doctest SVGM
 end
