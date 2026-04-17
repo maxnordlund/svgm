@@ -1,0 +1,69 @@
+# SVGM binding for Elixir
+<!-- Start SVGM module doc -->
+<%= module_doc %>
+<!-- End SVGM module doc -->
+
+## Installation
+
+The package can be installed by adding `svgm` to your list of dependencies in
+`mix.exs`:
+
+```elixir
+def deps do
+  [
+    {:svgm, "~> <%= version %>"}
+  ]
+end
+```
+
+Or with [`Mix.install/1`][]:
+
+```elixir
+Mix.install([:svgm])
+```
+
+## Usage
+<!-- Start SVGM.optimize!/2 doc -->
+<%= optimize_doc %>
+<!-- End SVGM.optimize!/2 doc -->
+
+## Forcing compilation
+
+By default **you don't need Rust installed** because the lib will try to
+download a precompiled NIF file. In case you want to force compilation set the
+`SVGM_BUILD` environment variable to `true` or `1`. Alternatively you can also
+set the application env `:build_from_source` to `true` in order to force the
+build:
+
+```elixir
+config :svgm, Svgm, build_from_source: true
+```
+
+You also need to add Rustler to your dependencies when you want to force the
+compilation:
+
+```elixir
+def deps do
+  [
+    {:svgm, "~> <%= version %>"},
+    {:rustler, ">= <%= rustler_version %>", optional: true}
+  ]
+end
+```
+
+## Copyright and License
+
+Licensed under either of
+
+- Apache License, Version 2.0, ([LICENSE-APACHE](../LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+- MIT license ([LICENSE-MIT](../LICENSE-MIT) or http://opensource.org/licenses/MIT)
+
+at your option.
+
+## Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
+dual licensed as above, without any additional terms or conditions.
+
+[`Mix.install/1`]: https://hexdocs.pm/mix/Mix.html#install/2
