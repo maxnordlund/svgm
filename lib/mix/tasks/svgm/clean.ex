@@ -26,7 +26,7 @@ defmodule Mix.Tasks.Svgm.Clean do
   @impl true
   def run(args) do
     {options, _, _} = OptionParser.parse(args, strict: @switches)
-    project_config = Mix.Project.get!().project()
+    project_config = Mix.Project.config()
 
     if Keyword.get(options, :doc, true) do
       doc_dir = project_config[:docs][:output] || "doc"

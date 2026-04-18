@@ -25,7 +25,6 @@ defmodule Mix.Tasks.Svgm.Readme do
   @impl true
   def run(_args) do
     Mix.shell().info("Rendering README")
-    project = Mix.Project.get!().project()
 
     docs = Code.fetch_docs(SVGM)
     optimize_doc = Enum.find_value(docs_v1(docs, :docs), &optimize_doc_finder(&1))
@@ -37,7 +36,7 @@ defmodule Mix.Tasks.Svgm.Readme do
     readme =
       EEx.eval_file(
         "README.md.eex",
-        version: project[:version],
+        version: Mix.Project.config()[:version],
         module_doc: docs_v1(docs, :module_doc)["en"],
         optimize_doc: optimize_doc,
         rustler_version: rustler_version

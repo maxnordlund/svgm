@@ -54,6 +54,7 @@ defmodule SVGM.MixProject do
   defp deps do
     [
       {:rustler, "~> 0.37.3", runtime: false},
+      {:rustler_precompiled, "~> 0.9.0"},
 
       # Dev & Test
       {:ex_doc, "~> 0.34", only: :dev, runtime: false, warn_if_outdated: true},
@@ -109,6 +110,7 @@ defmodule SVGM.MixProject do
         # Rust related
         "Cargo.*",
         "native",
+        "checksum-*.exs",
 
         # General
         "README.md",

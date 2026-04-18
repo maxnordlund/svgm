@@ -10,3 +10,9 @@ crate-type = ["cdylib"]
 [dependencies]
 rustler = "0.37.3"
 svgm-core = "0.3.7"
+
+[features]
+default = ["nif_version_2_15"]
+
+# Feature necessary for Rustler Precompiled.
+nif_version_2_15 = ["rustler/nif_version_2_15"]
